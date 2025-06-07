@@ -77,7 +77,7 @@ function App() {
   const [addressDetails, setAddressDetails] = useState<AddressFormValues | null>(
     null,
   );
-  const [selectedWasteTypes, setSelectedWasteTypes] = useState<string[]>([]);
+  const [_selectedWasteTypes, setSelectedWasteTypes] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
 
   const handleAddressSelect = (address: AddressSuggestion) => {
@@ -109,7 +109,7 @@ function App() {
   const handleWasteTypeSubmit = (types: string[]) => {
     setSelectedWasteTypes(types);
     // Navigate to next step (skip size selection)
-    console.warn("Selected waste types:", types, selectedWasteTypes);
+    // console.warn("Selected waste types:", types, selectedWasteTypes);
   };
 
   const getCurrentStepNumber = () => {

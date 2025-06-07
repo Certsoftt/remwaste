@@ -156,8 +156,9 @@ function SearchBar({ onAddressSelect }: SearchBarProps) {
       }));
   }, [searchText]);
 
-  const handleSelect = (value: unknown, option: any) => {
+  const handleSelect = (_value: unknown, option: any) => {
     onAddressSelect(option.address);
+    // console.warn(value);
   };
 
   return (
