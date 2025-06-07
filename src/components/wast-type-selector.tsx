@@ -146,7 +146,7 @@ type WasteTypeSelectorProps = {
   onContinue: (selectedTypes: string[]) => void;
 };
 
-export function WasteTypeSelector({ onBack, onContinue }: WasteTypeSelectorProps) {
+export default function WasteTypeSelector({ onBack, onContinue }: WasteTypeSelectorProps) {
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
 
   const toggleWasteType = (id: string) => {
