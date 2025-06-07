@@ -1,9 +1,10 @@
 import { createTheme, CssBaseline, Fade, ThemeProvider } from "@mui/material";
 import { ConfigProvider, theme } from "antd";
-import { useState, Suspense, lazy } from "react";
+import { lazy, Suspense, useState } from "react";
 
 import type { AddressFormValues } from "./components/address-form";
 import type { AddressSuggestion } from "./mock/address-data";
+
 import {
   ContentWrapper,
   LogoWrapper,
@@ -12,10 +13,10 @@ import {
   VersionText,
 } from "./components/styled";
 
-const AddressForm = lazy(()=>import("./components/address-form"));
-const ProgressTracker = lazy(()=>import("./components/progress-tracker"));
-const SearchBar = lazy(()=>import("./components/search-bar"));
-const WasteTypeSelector = lazy(()=>import("./components/wast-type-selector"));
+const AddressForm = lazy(() => import("./components/address-form"));
+const ProgressTracker = lazy(() => import("./components/progress-tracker"));
+const SearchBar = lazy(() => import("./components/search-bar"));
+const WasteTypeSelector = lazy(() => import("./components/wast-type-selector"));
 
 const darkTheme = createTheme({
   palette: {
@@ -108,7 +109,7 @@ function App() {
   const handleWasteTypeSubmit = (types: string[]) => {
     setSelectedWasteTypes(types);
     // Navigate to next step (skip size selection)
-    // console.log("Selected waste types:", types);
+    console.warn("Selected waste types:", types, selectedWasteTypes);
   };
 
   const getCurrentStepNumber = () => {
