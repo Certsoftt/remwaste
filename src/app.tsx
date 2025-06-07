@@ -1,13 +1,9 @@
 import { createTheme, CssBaseline, Fade, ThemeProvider } from "@mui/material";
 import { ConfigProvider, theme } from "antd";
-import { useState } from "react";
+import { useState, Suspense, lazy } from "react";
 
 import type { AddressFormValues } from "./components/address-form";
 import type { AddressSuggestion } from "./mock/address-data";
-
-import { AddressForm } from "./components/address-form";
-import { ProgressTracker } from "./components/progress-tracker";
-import SearchBar from "./components/search-bar";
 import {
   ContentWrapper,
   LogoWrapper,
@@ -15,7 +11,11 @@ import {
   StyledContainer,
   VersionText,
 } from "./components/styled";
-import { WasteTypeSelector } from "./components/wast-type-selector";
+
+const AddressForm = lazy(()=>import("./components/address-form"));
+const ProgressTracker = lazy(()=>import("./components/progress-tracker"));
+const SearchBar = lazy(()=>import("./components/search-bar"));
+const WasteTypeSelector = lazy(()=>import("./components/wast-type-selector"));
 
 const darkTheme = createTheme({
   palette: {
@@ -130,81 +130,83 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <ConfigProvider
-        theme={{
-          algorithm: theme.darkAlgorithm,
-          token: {
-            colorPrimary: "#1976d2",
-            borderRadius: 12,
-            colorBgContainer: "#1a1a1a",
-            colorBgElevated: "#1a1a1a",
-            boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
-          },
-        }}
-      >
-        <CssBaseline />
-        <StyledContainer maxWidth={false}>
-          <ProgressTracker
-            currentStep={getCurrentStepNumber()}
-            steps={steps}
-          />
+    <Suspense fallback={null}>
+      <ThemeProvider theme={darkTheme}>
+        <ConfigProvider
+          theme={{
+            algorithm: theme.darkAlgorithm,
+            token: {
+              colorPrimary: "#1976d2",
+              borderRadius: 12,
+              colorBgContainer: "#1a1a1a",
+              colorBgElevated: "#1a1a1a",
+              boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
+            },
+          }}
+        >
+          <CssBaseline />
+          <StyledContainer maxWidth={false}>
+            <ProgressTracker
+              currentStep={getCurrentStepNumber()}
+              steps={steps}
+            />
 
-          <LogoWrapper>
-            <h1>SKIP HIRE</h1>
-            <p>With A Difference</p>
-          </LogoWrapper>
+            <LogoWrapper>
+              <h1>SKIP HIRE</h1>
+              <p>With A Difference</p>
+            </LogoWrapper>
 
-          <ContentWrapper>
-            <Fade in={currentStep === "address-search"} timeout={500}>
-              <div
-                style={{
-                  display: currentStep === "address-search" ? "block" : "none",
-                  width: "100%",
-                }}
-              >
-                <SearchWrapper>
-                  <SearchBar onAddressSelect={handleAddressSelect} />
-                </SearchWrapper>
-              </div>
-            </Fade>
+            <ContentWrapper>
+              <Fade in={currentStep === "address-search"} timeout={500}>
+                <div
+                  style={{
+                    display: currentStep === "address-search" ? "block" : "none",
+                    width: "100%",
+                  }}
+                >
+                  <SearchWrapper>
+                    <SearchBar onAddressSelect={handleAddressSelect} />
+                  </SearchWrapper>
+                </div>
+              </Fade>
 
-            <Fade in={currentStep === "address-form"} timeout={500}>
-              <div
-                style={{
-                  display: currentStep === "address-form" ? "block" : "none",
-                  width: "100%",
-                }}
-              >
-                <AddressForm
-                  onSubmit={handleAddressSubmit}
-                  loading={loading}
-                  onBack={handleBackToSearch}
-                  selectedAddress={selectedAddress}
-                  initialValues={addressDetails}
-                />
-              </div>
-            </Fade>
+              <Fade in={currentStep === "address-form"} timeout={500}>
+                <div
+                  style={{
+                    display: currentStep === "address-form" ? "block" : "none",
+                    width: "100%",
+                  }}
+                >
+                  <AddressForm
+                    onSubmit={handleAddressSubmit}
+                    loading={loading}
+                    onBack={handleBackToSearch}
+                    selectedAddress={selectedAddress}
+                    initialValues={addressDetails}
+                  />
+                </div>
+              </Fade>
 
-            <Fade in={currentStep === "waste-type"} timeout={500}>
-              <div
-                style={{
-                  display: currentStep === "waste-type" ? "block" : "none",
-                  width: "100%",
-                }}
-              >
-                <WasteTypeSelector
-                  onBack={handleBackToAddress}
-                  onContinue={handleWasteTypeSubmit}
-                />
-              </div>
-            </Fade>
-          </ContentWrapper>
+              <Fade in={currentStep === "waste-type"} timeout={500}>
+                <div
+                  style={{
+                    display: currentStep === "waste-type" ? "block" : "none",
+                    width: "100%",
+                  }}
+                >
+                  <WasteTypeSelector
+                    onBack={handleBackToAddress}
+                    onContinue={handleWasteTypeSubmit}
+                  />
+                </div>
+              </Fade>
+            </ContentWrapper>
 
-          <VersionText>Version 1.1.34</VersionText>
-        </StyledContainer>
-      </ConfigProvider>
-    </ThemeProvider>
+            <VersionText>Version 1.1.34</VersionText>
+          </StyledContainer>
+        </ConfigProvider>
+      </ThemeProvider>
+    </Suspense>
   );
 }
 

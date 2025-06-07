@@ -84,7 +84,7 @@ type ProgressTrackerProps = {
   }>;
 };
 
-export function ProgressTracker({ currentStep, steps }: ProgressTrackerProps) {
+export default function ProgressTracker({ currentStep, steps }: ProgressTrackerProps) {
   const progress = ((currentStep - 1) / (steps.length - 1)) * 100;
 
   return (
