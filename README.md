@@ -15,7 +15,7 @@ This documentation provides an overview of the project's architecture, implement
 - **Build Tool**: Vite
 - **Package Manager**: pnpm
 - **Type Checking**: TypeScript
-- **Code Quality**: ESLint
+- **Code Quality/Stactic Code Analysis**: ESLint
 
 ### Architecture & Implementation
 
@@ -31,6 +31,15 @@ src/
     progress-tracker.tsx   # Step progress indicator
     styled/               
       index.ts            # Shared styled components
+      skeleton.tsx            # Shared skeleton loading effect component
+    modals/
+      heavy-waste-modal.tsx             # Heavy Waste modal compoent
+      heavy-waste-percentage-modal.tsx  # Heavy Waste Percentage modal compoent
+      no-heavy-waste-modal.tsx          # No Heavy Waste modal compoent
+      payment-modal.tsx                 # Payment modal compoent
+      plasterboard-percentage-modal.tsx # Plasterboard Percentage modal compoent
+      private-road-modal.tsx            # Private Property modal compoent
+      public-road-modal.tsx             # Public Road modal compoent
   mock/
     address-data.ts       # Mock address data
     waste-types.ts        # Mock waste type data
@@ -42,7 +51,10 @@ graph TD;
     App-->Search-Component;
     App-->Address-Confirmation-Component;
     App-->Waste-Type-Selector-Component;
-    App-->Waste-Carrier-Selector-Component;
+    App-->Select-Skip-Component;
+    App-->Permit-Check-Component;
+    App-->Schedule-Component;
+    App-->Payment-Component;
 ```
 
 2. #### Implementation Approach
