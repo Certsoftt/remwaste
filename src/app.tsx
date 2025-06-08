@@ -1,8 +1,8 @@
-import { Suspense, lazy } from 'react';
-import styled from 'styled-components';
+import { lazy, Suspense } from "react";
+import styled from "styled-components";
 
 // Lazy load the Navbar component for better initial load performance
-const Navbar = lazy(() => import('./components/Navbar'));
+const Navbar = lazy(() => import("./components/Navbar"));
 
 // Styled components for the layout
 const AppContainer = styled.div`
