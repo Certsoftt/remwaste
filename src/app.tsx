@@ -1,3 +1,11 @@
+import {
+  CalendarOutlined,
+  CarOutlined,
+  DeleteOutlined,
+  DollarOutlined,
+  FileTextOutlined,
+  HomeOutlined,
+} from "@ant-design/icons";
 import { createTheme, CssBaseline, Fade, ThemeProvider } from "@mui/material";
 import { ConfigProvider, theme } from "antd";
 import { lazy, Suspense, useState } from "react";
@@ -54,11 +62,30 @@ const darkTheme = createTheme({
 });
 
 const steps = [
-  { label: "Address" },
-  { label: "Waste Type" },
-  { label: "Skip Size" },
-  { label: "Permit" },
-  { label: "Schedule" },
+  {
+    label: "Address",
+    icon: <HomeOutlined />,
+  },
+  {
+    label: "Waste Type",
+    icon: <DeleteOutlined />,
+  },
+  {
+    label: "Skip Size",
+    icon: <CarOutlined />,
+  },
+  {
+    label: "Permit",
+    icon: <FileTextOutlined />,
+  },
+  {
+    label: "Schedule",
+    icon: <CalendarOutlined />,
+  },
+  {
+    label: "Payment",
+    icon: <DollarOutlined />,
+  },
 ];
 
 type FormStep =
@@ -67,7 +94,8 @@ type FormStep =
   | "waste-type"
   | "skip-size"
   | "permit"
-  | "schedule";
+  | "schedule"
+  | "payment";
 
 function App() {
   const [currentStep, setCurrentStep] = useState<FormStep>("address-search");
@@ -125,6 +153,8 @@ function App() {
         return 4;
       case "schedule":
         return 5;
+      case "payment":
+        return 6;
       default:
         return 1;
     }
