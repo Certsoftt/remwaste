@@ -349,7 +349,7 @@ export default function WasteTypeSelector({
 
         <Header>
           <h2>What type of waste are you disposing of?</h2>
-          <p>Select all that apply</p>
+          <p>Select all that apply (Select By Clicking On the Card)</p>
         </Header>
 
         <WasteGrid>
