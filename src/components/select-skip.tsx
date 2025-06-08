@@ -235,7 +235,7 @@ function getSkipImage(_size: number, allowedOnRoad: boolean, wastePercentage: st
   return `/src/assets/yarder-skip-${wastePercentage === "under-5" ? "1" : "2"}.jpg`;
 }
 
-export function SelectSkip({ wastePercentage, onSkipSelect}: SelectSkipProps) {
+export function SelectSkip({ wastePercentage, onSkipSelect }: SelectSkipProps) {
   const [skips, setSkips] = useState<Skip[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
