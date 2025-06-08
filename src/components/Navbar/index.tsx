@@ -83,4 +83,6 @@ const NavbarComponent: React.FC = () => {
 };
 
 // Memoize the entire component to prevent unnecessary re-renders
-export const Navbar = memo(NavbarComponent);
+const Navbar = memo(NavbarComponent);
+
+export default Navbar;
