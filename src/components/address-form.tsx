@@ -9,6 +9,15 @@ const FormContainer = styled.div`
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
+  padding: 1rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem 0.75rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.75rem 0.5rem;
+  }
 `;
 
 const SelectedAddress = styled.div`
@@ -17,16 +26,22 @@ const SelectedAddress = styled.div`
   padding: 16px;
   margin-bottom: 24px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  word-break: break-word;
+
+  @media (max-width: 480px) {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
 
   h3 {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
     margin: 0 0 8px 0;
   }
 
   p {
     color: rgba(255, 255, 255, 0.6);
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 2vw, 0.9rem);
     margin: 0;
   }
 `;
@@ -47,18 +62,23 @@ const StyledForm = styled(Form)`
   }
 
   .ant-form-item {
-    margin-bottom: 1rem;
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
   }
 
   .ant-input {
-    height: 56px;
+    height: clamp(48px, 8vh, 56px);
     background-color: rgba(45, 45, 45, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 8px;
     color: white;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    padding: 0.5rem clamp(0.75rem, 2vw, 1rem);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+
+    @media (max-width: 480px) {
+      height: 48px;
+    }
 
     &::placeholder {
       color: rgba(255, 255, 255, 0.5);
@@ -76,21 +96,26 @@ const StyledForm = styled(Form)`
 
   .ant-form-item-label > label {
     color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+    font-size: clamp(0.85rem, 2vw, 0.9rem);
+    margin-bottom: clamp(0.3rem, 1.5vw, 0.5rem);
   }
 
   .ant-form-item-explain-error {
     color: #ff4d4f;
     margin-top: 0.3rem;
-    font-size: 0.8rem;
+    font-size: clamp(0.75rem, 1.8vw, 0.8rem);
   }
 `;
 
 const BackButton = styled(IconButton)`
   && {
     color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 16px;
+    margin-bottom: clamp(12px, 3vw, 16px);
+    padding: clamp(8px, 2vw, 12px);
+
+    @media (max-width: 480px) {
+      margin-bottom: 12px;
+    }
 
     &:hover {
       color: white;
@@ -102,14 +127,18 @@ const BackButton = styled(IconButton)`
 const SubmitButton = styled(Button)`
   && {
     width: 100%;
-    height: 56px;
+    height: clamp(48px, 8vh, 56px);
     background-color: #1976d2;
     color: white;
     border-radius: 8px;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
     text-transform: none;
-    margin-top: 1.5rem;
+    margin-top: clamp(1rem, 3vw, 1.5rem);
     transition: all 0.3s ease;
+
+    @media (max-width: 480px) {
+      height: 48px;
+    }
 
     &:hover {
       background-color: #1565c0;
@@ -178,9 +207,8 @@ export function AddressForm({ onSubmit, onBack, loading, selectedAddress }: Addr
           name="city"
           rules={[{ required: true, message: "City is Required" }]}
         >
-          <Input.TextArea
+          <Input
             placeholder="e.g., Washington way"
-            style={{ height: "100px", resize: "none" }}
           />
         </Form.Item>
 

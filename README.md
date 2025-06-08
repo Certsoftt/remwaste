@@ -53,10 +53,10 @@ The application implements a multi-step booking process:
 1. Address Search
 2. Address Form
 3. Waste Type Selection
-4. Skip Size Selection (planned)
-5. Permit Check (planned)
-6. Date Selection (planned)
-7. Payment (planned)
+4. Skip Size Selection 
+5. Permit Check 
+6. Date Selection 
+7. Payment 
 
 - ##### State Management
 
@@ -101,76 +101,6 @@ const filteredOptions = useMemo(() => {
   return addressSuggestions.filter(...)
 }, [searchText]);
 ```
-
-- ##### Address Form
-- Form validation with Ant Design Form
-- Data persistence
-- Error handling
-- Loading states
-
-- ##### Waste Type Selection
-- Multi-select capability
-- Visual feedback
-- Restrictions information
-- Category descriptions
-
-- ##### Progress Tracking
-- Visual step indicator
-- Current step highlight
-- Completion status
-- Responsive design
-
-4. #### Design Patterns
-- ##### Component Composition
-- Modular components
-- Reusable styled components
-- Clear component hierarchy
-
-- ##### Form Handling
-- Controlled components
-- Form validation
-- Error management
-- State preservation
-
-- ##### Styling Approach
-- Styled-components for component-specific styles
-- Theme consistency
-- Responsive design patterns
-- Animation management
-
-5. #### Implementation Details
-
-1. ##### Setup and Configuration
-    - Project initialization with Vite
-    - TypeScript configuration
-    - ESLint setup for code quality
-
-2. ##### Style/UI Framework Integration:
-    - Combined Material-UI and Ant Design
-    - Custom styled-components and theme configuration
-    - Consistent theming
-3. ##### Component Development
-    - Core components creation
-    - Mock data setup
-    - Form validation implementation
-    - Style system establishment
-4. ##### Feature Implementation
-    - Address search and filtering
-    - Form validation and submission
-    - Progress tracking
-    - Multi-select waste type functionality
-5. ##### Form Management:
-    - Ant Design Form components
-    - Custom validation
-    - Error handling
-6. ##### Animation:
-    - Material-UI Fade transitions
-    - CSS animations
-    - Smooth state transitions
-7. ##### Responsiveness:
-    - Flexible grids
-    - Responsive typography
-    - Mobile-friendly interactions
 
 6. #### Benefits of the Chosen Approach
 
