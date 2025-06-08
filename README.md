@@ -1,15 +1,14 @@
-# Skip Hire - Waste Management Booking System
+# Billia - A Fintech App
 
 ## Project Overview
-This is a modern, responsive user-friendly Skip Hire service web application built with React, TypeScript, and a combination of Material-UI and Ant Design components for booking skip hire services. The application provides a streamlined, multi-step booking process with a focus on user experience, accessibility, and clean design.
+This is a modern, responsive user-friendly Fintech web application built with React, TypeScript, and Ant Design components for providing payments services and solutions. The application design is streamlined to focus on user experience, accessibility, and clean design.
 
-## Skip Hire Service - Technical Documentation
+## Billia - Technical Documentation
 This documentation provides an overview of the project's architecture, implementation approach, and design decisions. The codebase demonstrates a focus on maintainability, scalability, and user experience through careful component organization and modern development practices.
 
 ### Tech Stack
 - **Frontend Framework**: React with TypeScript
 - **UI Libraries:**
-    - Material-UI (MUI)
     - Ant Design (antd)
     - Styled-components
 - **Build Tool**: Vite
@@ -25,96 +24,111 @@ The application follows a modular component architecture:
 ```suggestion
 src/
   components/
-    search-bar.tsx         # Address search component
-    address-form.tsx       # Address details form
-    wast-type-selector.tsx # Waste type selection
-    progress-tracker.tsx   # Step progress indicator
-    styled/               
-      index.ts            # Shared styled components
-      skeleton.tsx            # Shared skeleton loading effect component
-    modals/
-      heavy-waste-modal.tsx             # Heavy Waste modal compoent
-      heavy-waste-percentage-modal.tsx  # Heavy Waste Percentage modal compoent
-      no-heavy-waste-modal.tsx          # No Heavy Waste modal compoent
-      payment-modal.tsx                 # Payment modal compoent
-      plasterboard-percentage-modal.tsx # Plasterboard Percentage modal compoent
-      private-road-modal.tsx            # Private Property modal compoent
-      public-road-modal.tsx             # Public Road modal compoent
-  mock/
-    address-data.ts       # Mock address data
-    waste-types.ts        # Mock waste type data
+    Navbar/
+        index.tsx                   # Address navbar component
+        styles.ts                   # Address styling of navbar component
+    hooks/
+        use-window-size.ts          #Address window events such as resizing             
+    utils/               
+      constants.ts                  #Address breakpoints and app constans
+    app.css
+    app.tsx
+    index.css
+    main.tsx
 ```
 
-    1a. Component Tree
+#### App Component Tree
 ```mermaid
 graph TD;
-    App-->Search-Component;
-    App-->Address-Confirmation-Component;
-    App-->Waste-Type-Selector-Component;
-    App-->Select-Skip-Component;
-    App-->Permit-Check-Component;
-    App-->Schedule-Component;
-    App-->Payment-Component;
+    App-->Navbar-Component
 ```
 
 2. #### Implementation Approach
+This implementation includes several optimizations and improvements:
 
--  ##### Multi-step Form Process
-The application implements a multi-step booking process:
+The implementation ensures:
+1. Fast initial page load
+2. Smooth component loading
+3. No layout shifts during loading
+4. Clean and maintainable code
+5. Optimal performance
+6. Good user experience
 
-1. Address Search
-2. Address Form
-3. Waste Type Selection
-4. Skip Size Selection 
-5. Permit Check 
-6. Date Selection 
-7. Payment 
+Implementation of the app also look at:
 
-- ##### State Management
+##### Performance Optimizations:
+- Component memoization using React.memo
+- Memoized callback functions using useCallback
+- Debounced window resize listener
+- Conditional rendering of mobile drawer
+- Optimized image loading with width/height attributes
+- CSS animations hardware acceleration
+- Efficient styled-components usage
 
-- Uses React's useState for local state management
-- Maintains form state between steps
-- Implements step navigation with state preservation
+##### Mobile-First Approach:
+- Base styles for mobile devices
+- Progressive enhancement for larger screens
+- Responsive units using clamp()
+- Touch-friendly mobile menu
+- Optimized for various screen sizes
 
-- ##### UI/UX Design Decisions
+##### Accessibility Improvements:
+- Semantic HTML structure
+- ARIA labels for menu buttons
+- Focus management
+- Keyboard navigation support
+- Proper color contrast
+- Focus-visible outlines
 
-1. ###### Dark Theme:
-    - Enhanced visibility
-    - Reduced eye strain
-    - Modern aesthetic
+##### UI/UX Enhancements:
+- Smooth animations and transitions
+- Touch-friendly tap targets
+- Visual feedback on interactions
+- Consistent spacing using clamp()
+- Fallback styles for older browsers
+- Improved mobile drawer experience
 
-2. ###### Glass-morphism Effects:
-    - Backdrop filters
-    - Subtle transparencies
-    - Modern visual appeal
+##### Code Organization:
+- Separated constants and utilities
+- Custom hook for window size
+- Modular component structure
+- Type-safe implementation
+- Easy to maintain and extend
 
-3. ###### Progressive Disclosure:
-    - Step-by-step form progression
-    - Clear visual feedback
-    - Reduced cognitive load
+##### Responsive Features:
+- Dynamic breakpoints
+- Fluid typography
+- Responsive spacing
+- Adaptive layouts
+- Flexible container widths
 
-4. ###### Responsive Design:
-    - Mobile-first approach
-    - Flexible layouts
-    - Adaptive components
+##### Browser Support:
+- Fallbacks for backdrop-filter
+- Cross-browser compatible animations
+- Progressive enhancement approach
+- Graceful degradation
 
-3. #### Key Features
+### COMPONENT IMPLEMENTATION
+It was ensured that each component had the following: 
+- Highly performant with minimal re-renders
+- Fully responsive across all devices
+- Accessible to all users
+- Easy to maintain and extend
+- Optimized for both mobile and desktop
+- Proper semantic HTML with main content area
+- Clean component structure
+- Separation of styled components
+- Clear component responsibilities
+- Type-safe implementation
+- Efficient style reuse
+- Minimal prop drilling
+- No layout shifts
+- Proper landmark elements
+- Clear content organization
+- Screen reader friendly
 
-- ##### Address Search
-- Autocomplete functionality
-- Real-time filtering
-- Clear visual feedback
-- Location-based results
-- Memoized search results for performance
 
-```js
-const filteredOptions = useMemo(() => {
-  if (!searchText) return [];
-  return addressSuggestions.filter(...)
-}, [searchText]);
-```
-
-6. #### Benefits of the Chosen Approach
+#### Benefits of the Chosen Approach
 
 1. ##### Maintainability
     - Modular component structure
