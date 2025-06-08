@@ -1,5 +1,6 @@
-import styled, { css } from 'styled-components';
-import { BREAKPOINTS, COLORS } from '../../utils/constants';
+import styled, { css } from "styled-components";
+
+import { BREAKPOINTS, COLORS } from "../../utils/constants";
 
 const slideIn = css`
   @keyframes slideIn {

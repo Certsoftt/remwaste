@@ -1,9 +1,10 @@
-import React, { memo, useState, useCallback } from 'react';
-import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
-import { Button, Drawer } from 'antd';
-import { useWindowSize } from '../../hooks/useWindowSize';
-import { NAV_ITEMS } from '../../utils/constants';
-import * as S from './styles';
+import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
+import { Button, Drawer } from "antd";
+import React, { memo, useCallback, useState } from "react";
+
+import { useWindowSize } from "../../hooks/use-window-size";
+import { NAV_ITEMS } from "../../utils/constants";
+import * as S from "./styles";
 
 const NavbarComponent: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,15 +22,15 @@ const NavbarComponent: React.FC = () => {
   // Memoized menu items to prevent unnecessary re-renders
   const renderMenuItems = useCallback(() => (
     NAV_ITEMS.map(item => (
-      <S.MenuItem 
-        key={item.key} 
+      <S.MenuItem
+        key={item.key}
         href={item.href}
         onClick={isMobile ? closeMenu : undefined}
       >
         {item.label}
       </S.MenuItem>
     ))
-  ), [isMobile]);
+  ), [isMobile, closeMenu]);
 
   return (
     <S.NavbarContainer>
@@ -52,7 +53,7 @@ const NavbarComponent: React.FC = () => {
         <S.MobileMenuButton>
           <Button
             type="text"
-            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
             icon={isOpen ? <CloseOutlined /> : <MenuOutlined />}
             onClick={toggleMenu}
           />

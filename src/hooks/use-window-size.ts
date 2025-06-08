@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from "react";
 
-interface WindowSize {
+type WindowSize = {
   width: number;
   height: number;
-}
+};
 
-export const useWindowSize = (): WindowSize => {
+export function useWindowSize(): WindowSize {
   const [windowSize, setWindowSize] = useState<WindowSize>({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -25,13 +25,13 @@ export const useWindowSize = (): WindowSize => {
       }, 150);
     };
 
-    window.addEventListener('resize', handleResize);
-    
+    window.addEventListener("resize", handleResize);
+
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
       clearTimeout(timeoutId);
     };
   }, []);
 
   return windowSize;
-};
+}
