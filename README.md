@@ -67,6 +67,10 @@ Implementation of the app also look at:
 - CSS animations hardware acceleration
 - Efficient styled-components usage
 
+##### SEO:
+- noindex, nofollow tags for 404 pages (SEO best practice)
+- inject metadata into pages using React-Helmet-Async
+
 ##### Mobile-First Approach:
 - Base styles for mobile devices
 - Progressive enhancement for larger screens
