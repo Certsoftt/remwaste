@@ -1,13 +1,14 @@
 import { Spin } from "antd";
 import { lazy, Suspense } from "react";
 import { HelmetProvider } from "react-helmet-async";
+import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 
+import { routes } from "./router/config";
 import { COLORS } from "./utils/constants";
 
 // Lazy load components for better initial load performance
 const Navbar = lazy(() => import("./components/Navbar"));
-const HomePage = lazy(() => import("./pages/Home"));
 
 // Styled components for the layout
 const AppContainer = styled.div`
@@ -36,7 +37,13 @@ function App() {
           )}
         >
           <Navbar />
-          <HomePage />
+          <Routes>
+            {
+              routes.map(route =>
+                <Route key={route.id} path={route.path} element={<route.element />} />,
+              )
+            }
+          </Routes>
         </Suspense>
       </AppContainer>
     </HelmetProvider>
