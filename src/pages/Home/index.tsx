@@ -7,7 +7,7 @@ import Everything from "../../components/Everything";
 import Hero from "../../components/Hero";
 import Introducing from "../../components/Introducing";
 import Testimonials from "../../components/Testimonial";
-import { testimonialData } from "../../components/Testimonials/data";
+import { testimonialData } from "../../components/Testimonial/data";
 import * as S from "./styles";
 
 const HomePageComponent: React.FC = () => {
