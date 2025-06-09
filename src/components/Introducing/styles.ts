@@ -12,7 +12,6 @@ export const Container = styled.div`
   max-width: ${BREAKPOINTS.largeDesktop}px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column-reverse;
   gap: clamp(2rem, 5vw, 4rem);
 
   @media (min-width: ${BREAKPOINTS.tablet}px) {

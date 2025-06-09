@@ -42,6 +42,15 @@ const Introducing: React.FC = () => {
   return (
     <IntroducingSection>
       <Container>
+        <ImageContainer>
+          <PhoneImage
+            src="/assets/images/home/introducing/image7.png"
+            alt="Billia AI Chat Interface"
+            loading="lazy"
+            width="500"
+            height="600"
+          />
+        </ImageContainer>
         <Content>
           <Title>
             Introducing Billia AI: Smarter, Faster, Personal
@@ -63,15 +72,6 @@ const Introducing: React.FC = () => {
             ))}
           </FeatureList>
         </Content>
-        <ImageContainer>
-          <PhoneImage
-            src="/assets/images/home/introducing/image7.png"
-            alt="Billia AI Chat Interface"
-            loading="lazy"
-            width="500"
-            height="600"
-          />
-        </ImageContainer>
       </Container>
     </IntroducingSection>
   );

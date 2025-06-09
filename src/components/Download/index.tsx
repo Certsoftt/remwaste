@@ -33,7 +33,7 @@ const Download: React.FC<DownloadProps> = ({
                 aria-label="Get it on Google Play"
               >
                 <img
-                  src="/assets/images/home/download/Store download button(1).png"
+                  src="/assets/images/home/download/googlestore.png"
                   alt="Get it on Google Play"
                   loading="lazy"
                 />
@@ -45,7 +45,7 @@ const Download: React.FC<DownloadProps> = ({
                 aria-label="Download on the App Store"
               >
                 <img
-                  src="/assets/images/home/download/Store download button.png"
+                  src="/assets/images/home/download/appstore.png"
                   alt="Download on the App Store"
                   loading="lazy"
                 />

@@ -7,6 +7,7 @@ import Everything from "../../components/Everything";
 import Hero from "../../components/Hero";
 import Introducing from "../../components/Introducing";
 import Testimonials from "../../components/Testimonial";
+import Footer from "../../components/Footer";
 import { testimonialData } from "../../components/Testimonial/data";
 import * as S from "./styles";
 
@@ -28,8 +29,14 @@ const HomePageComponent: React.FC = () => {
           description="Fast payments, smart reminders, and secure wallet tools — all inside Billia"
           googlePlayLink="#"
           appStoreLink="#"
-          mockupImage="/assets/images/home/download/images/image 9.png"
+          mockupImage="/assets/images/home/download/image9.png"
         />
+<Footer
+  logo="/assets/images/home/footer/footerlogo.png"
+  description="Our all-in-one app for bills, airtime, data, and smart payments — powered by Billia AI."
+  email="Billiainfo@gmail.com"
+  phone="08023437727"
+/>
       </S.HomeContainer>
     </>
   );
