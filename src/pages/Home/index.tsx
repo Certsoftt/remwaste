@@ -2,6 +2,7 @@ import React, { memo } from "react";
 import { Helmet } from "react-helmet";
 
 import MetaData from "../../common/metadata";
+import Everything from "../../components/Everything";
 import Hero from "../../components/Hero";
 import * as S from "./styles";
 
@@ -15,7 +16,7 @@ const HomePageComponent: React.FC = () => {
 
       <S.HomeContainer>
         <Hero />
-        {/* Other sections will be added here */}
+        <Everything />
       </S.HomeContainer>
     </>
   );
