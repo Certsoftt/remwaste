@@ -16,6 +16,15 @@ const HeroComponent: React.FC = () => {
     "/assets/images/home/Ellipse 3.png",
   ];
 
+  const floatingIcons = [
+    ["/assets/images/home/hero/img1.png", 1306],
+    ["/assets/images/home/hero/img2.png", 1307],
+    ["/assets/images/home/hero/img3.png", 1308],
+    ["/assets/images/home/hero/img4.png", 1310
+    ["/assets/images/home/hero/img5.png", 1317],
+    ["/assets/images/home/hero/img6.png", 1320],
+  ];
+
   return (
     <S.HeroSection>
       <S.ContentContainer>
@@ -85,10 +94,10 @@ const HeroComponent: React.FC = () => {
             />
           </S.PhoneImage>
           <S.FloatingElements>
-            {[1306, 1307, 1308, 1310, 1317].map(num => (
+            {floatingIcons.map(([iconImage, num]) => (
               <S.FloatingIcon
                 key={num}
-                src={`/assets/images/Frame 100000${num}.png`}
+                src={iconImage}
                 alt="Feature Icon"
                 $position={num}
               />
