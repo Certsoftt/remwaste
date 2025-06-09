@@ -9,8 +9,10 @@ This documentation provides an overview of the project's architecture, implement
 ### Tech Stack
 - **Frontend Framework**: React with TypeScript
 - **UI Libraries:**
-    - Ant Design (antd)
-    - Styled-components
+    - Ant Design (antd) for semantic and polymorphic HTML Element
+    - Styled-components for creating reuseable styling
+    - React-Router-Dom for cleint-side routing
+    - React-Helmet-Async for SEO best practice and injecting metadata into pages
 - **Build Tool**: Vite
 - **Package Manager**: pnpm
 - **Type Checking**: TypeScript
