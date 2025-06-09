@@ -20,10 +20,10 @@
     "antd": "^5.25.4",
     "axios": "^1.9.0",
     "react": "^19.1.0",
+    "react-awesome-reveal": "^4.3.1",
     "react-dom": "^19.1.0",
     "react-helmet": "^6.1.0",
     "react-helmet-async": "^2.0.5",
-    "react-reveal": "^1.2.2",
     "react-router-dom": "^7.6.2",
     "styled-components": "^6.1.18",
     "uuid": "^11.1.0"

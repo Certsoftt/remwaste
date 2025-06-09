@@ -61,7 +61,11 @@ src/
 #### App Component Tree
 ```mermaid
 graph TD;
-    App-->Navbar-Component
+    BrowserRouter-->HelmetProvider
+    HelmetProvider-->App-Component
+    App-Component-->Navbar-Component
+    App-Component-->HomePage-Component
+    App-Component-->AboutPage-Component
 ```
 
 2. #### Implementation Approach

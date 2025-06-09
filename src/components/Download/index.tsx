@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
 
 import type { DownloadProps } from "./types";
 
@@ -21,7 +21,7 @@ const Download: React.FC<DownloadProps> = ({
   return (
     <DownloadSection>
       <DownloadContainer>
-        <Fade left>
+        <Fade direction="left" triggerOnce>
           <ContentWrapper>
             <h1>{title}</h1>
             <p>{description}</p>
@@ -53,7 +53,7 @@ const Download: React.FC<DownloadProps> = ({
             </StoreButtons>
           </ContentWrapper>
         </Fade>
-        <Fade right>
+        <Fade direction="right" triggerOnce>
           <MockupWrapper>
             <img
               src={mockupImage}
