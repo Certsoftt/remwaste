@@ -65,7 +65,7 @@ const Introducing: React.FC = () => {
         </Content>
         <ImageContainer>
           <PhoneImage
-            src="/assets/images/introducing/image7.png"
+            src="/assets/images/home/introducing/image7.png"
             alt="Billia AI Chat Interface"
             loading="lazy"
             width="500"
