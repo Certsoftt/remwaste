@@ -4,12 +4,15 @@ import { HelmetProvider } from "react-helmet-async";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 
-import { routes } from "./router/config";
+// import { routes } from "./router/config";
 import { COLORS } from "./utils/constants";
 
 // Lazy load components for better initial load performance
 const Navbar = lazy(() => import("./components/Navbar"));
 const Footer = lazy(() => import("./components/Footer"));
+const Home = React.lazy(() => import("./pages/Home"));
+const About = React.lazy(() => import("./pages/About"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
 
 // Styled components for the layout
 const AppContainer = styled.div`
@@ -39,11 +42,14 @@ function App() {
         >
           <Navbar />
           <Routes>
-            {
+            {/* {
               routes.map(route =>
                 <Route key={route.id} path={route.path} element={<route.element />} />,
               )
-            }
+            } */}
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/*" element={<NotFound />} />
           </Routes>
           <Footer
             logo="/assets/images/home/footer/footerlogo.png"
