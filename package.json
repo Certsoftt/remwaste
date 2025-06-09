@@ -16,11 +16,16 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^7.1.1",
     "@mui/material": "^7.1.1",
+    "@types/react-helmet": "^6.1.11",
     "antd": "^5.25.4",
     "axios": "^1.9.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "styled-components": "^6.1.18"
+    "react-helmet": "^6.1.0",
+    "react-helmet-async": "^2.0.5",
+    "react-router-dom": "^7.6.2",
+    "styled-components": "^6.1.18",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.13.3",
