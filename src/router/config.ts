@@ -14,7 +14,7 @@ export const routes: Routes = [
   },
   {
     id: "about",
-    path: `${BASE_URL}/about`,
+    path: `/about`,
     element: About,
   },
   {

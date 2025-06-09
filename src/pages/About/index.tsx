@@ -21,9 +21,9 @@ const AboutPageComponent: React.FC = () => {
           imageSrc="/assets/images/about/young-afro-man-listening-music-with-headphones 1.png"
         />
         <Why
-          heading="Reimagining How Nigerians Pay, One Bill at a Time"
-          subheading="Why Choose Billia"
-          description="At Billia, we're building more than just a payment app — we're creating a smarter, simpler way for everyday Nigerians to stay connected, pay their bills, and take control of their financial lives."
+          heading="we created Billia because we saw a real problem, people struggling with too many apps, missed due dates, and unreliable payment platforms."
+          subheading="Why We Started"
+          description="So we built one app that brings it all together - electricity, internet, school fees, airtime, and even a virtual dollar card. Add Billia AI, and you've got the smartest payment experience available today."
           image="/assets/images/about/image 10.png"
         />
       </S.HomeContainer>

@@ -22,7 +22,7 @@ const Why: React.FC<WhyProps> = ({
         <Fade direction="left" triggerOnce>
           <ContentWrapper>
             <span>{subheading}</span>
-            <h2>{heading}</h2>
+            <p>{heading}</p>
             <p>{description}</p>
           </ContentWrapper>
         </Fade>
