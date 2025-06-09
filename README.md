@@ -29,10 +29,28 @@ src/
     Navbar/
         index.tsx                   # Address navbar component
         styles.ts                   # Address styling of navbar component
+    Everything/
+        index.tsx                   #Address everything component
+        styles.ts                   #Address everything styling
+    Footer/
+        index.tsx                   #Address footer component
+        styles.ts                   #Address footer styling
     hooks/
         use-window-size.ts          #Address window events such as resizing             
     utils/               
       constants.ts                  #Address breakpoints and app constans
+    pages/
+        Home/
+            index.tsx               #Address homepage design
+            styles.ts               #Address homepage styling
+        NotFound/
+            index.tsx               #Address 404 page design
+            styles.ts               #Address 404 page styling
+        About/
+            index.tsx                #Address about page design
+            styles.ts                #Address about page styling
+    common/
+        metadata                    #Address a reusable metadata injected tags in pages
     app.css
     app.tsx
     index.css
