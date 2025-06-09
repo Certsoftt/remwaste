@@ -66,11 +66,11 @@ const NavbarComponent: React.FC = () => {
             onClose={closeMenu}
             open={isOpen}
             width="80%"
-            bodyStyle={{ padding: 0 }}
+            styles={{ body: { padding: 0 } as React.CSSProperties }}
             style={{ maxWidth: 350 }}
             title="Menu"
             footer={null}
-            destroyOnClose
+            destroyOnHidden
           >
             <S.MobileMenuContainer>
               {renderMenuItems()}
