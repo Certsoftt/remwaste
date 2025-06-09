@@ -109,7 +109,9 @@ export const MenuItem = styled.a`
   &:focus-visible::after {
     width: 100%;
   }
-
+  &:active{
+  color: ${COLORS.primary};
+  }
   &:focus-visible {
     outline: none;
   }
