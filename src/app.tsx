@@ -9,6 +9,7 @@ import { COLORS } from "./utils/constants";
 
 // Lazy load components for better initial load performance
 const Navbar = lazy(() => import("./components/Navbar"));
+const Footer = lazy(() => import("./components/Footer"));
 
 // Styled components for the layout
 const AppContainer = styled.div`
@@ -44,6 +45,12 @@ function App() {
               )
             }
           </Routes>
+          <Footer
+            logo="/assets/images/home/footer/footerlogo.png"
+            description="Our all-in-one app for bills, airtime, data, and smart payments — powered by Billia AI."
+            email="Billiainfo@gmail.com"
+            phone="08023437727"
+          />
         </Suspense>
       </AppContainer>
     </HelmetProvider>

@@ -23,9 +23,11 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   flex: 1;
-
   @media (min-width: ${BREAKPOINTS.tablet}px) {
     max-width: 45%;
+  }
+  @media (max-width: ${BREAKPOINTS.tablet}px){
+  flex-direction: row;
   }
 `;
 
