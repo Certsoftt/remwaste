@@ -9,6 +9,12 @@ export const IntroducingSection = styled.section`
 `;
 
 export const Container = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  
   max-width: ${BREAKPOINTS.largeDesktop}px;
   margin: 0 auto;
   display: flex;
@@ -25,9 +31,6 @@ export const Content = styled.div`
   flex: 1;
   @media (min-width: ${BREAKPOINTS.tablet}px) {
     max-width: 45%;
-  }
-  @media (max-width: ${BREAKPOINTS.tablet}px){
-  flex-direction: row;
   }
 `;
 
