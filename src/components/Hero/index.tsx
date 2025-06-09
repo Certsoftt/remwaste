@@ -86,7 +86,7 @@ const HeroComponent: React.FC = () => {
         <S.RightSection>
           <S.PhoneImage>
             <img
-              src="/assets/images/Frame.png"
+              src="/assets/images/home/hero/image1.png"
               alt="Billia App Interface"
               width={isMobile ? 300 : 400}
               height={isMobile ? 612 : 816}
