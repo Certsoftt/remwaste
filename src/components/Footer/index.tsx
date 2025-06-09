@@ -1,32 +1,34 @@
-import React, { memo } from 'react';
-import { FacebookFilled, InstagramFilled, TwitterOutlined } from '@ant-design/icons';
-import type { FooterProps, NavLinkProps } from './types';
+import { FacebookFilled, InstagramFilled, TwitterOutlined } from "@ant-design/icons";
+import React, { memo } from "react";
+
+import type { FooterProps, NavLinkProps } from "./types";
+
 import {
-  FooterWrapper,
+  BrandSection,
+  Copyright,
   FooterContainer,
   FooterContent,
-  BrandSection,
+  FooterWrapper,
   NavSection,
-  Copyright,
   SocialLinks,
-} from './styles';
+} from "./styles";
 
 const navLinks: NavLinkProps[] = [
   {
-    label: 'Company',
+    label: "Company",
     links: [
-      { text: 'About Us', url: '/about' },
-      { text: 'Features', url: '/features' },
-      { text: 'Testimonials', url: '/testimonials' },
-      { text: 'Services', url: '/services' },
-      { text: 'FAQ', url: '/faq' },
+      { text: "About Us", url: "/about" },
+      { text: "Features", url: "/features" },
+      { text: "Testimonials", url: "/testimonials" },
+      { text: "Services", url: "/services" },
+      { text: "FAQ", url: "/faq" },
     ],
   },
   {
-    label: 'Legal',
+    label: "Legal",
     links: [
-      { text: 'Privacy Policy', url: '/privacy' },
-      { text: 'Terms of Service', url: '/terms' },
+      { text: "Privacy Policy", url: "/privacy" },
+      { text: "Terms of Service", url: "/terms" },
     ],
   },
 ];
@@ -59,11 +61,11 @@ const Footer: React.FC<FooterProps> = ({
             </SocialLinks>
           </BrandSection>
 
-          {navLinks.map((section) => (
+          {navLinks.map(section => (
             <NavSection key={section.label}>
               <h3>{section.label}</h3>
               <ul>
-                {section.links.map((link) => (
+                {section.links.map(link => (
                   <li key={link.text}>
                     <a href={link.url}>{link.text}</a>
                   </li>
@@ -82,7 +84,11 @@ const Footer: React.FC<FooterProps> = ({
         </FooterContent>
 
         <Copyright>
-          © {currentYear} Billia Technologies. All rights reserved.
+          ©
+          {" "}
+          {currentYear}
+          {" "}
+          Billia Technologies. All rights reserved.
         </Copyright>
       </FooterContainer>
     </FooterWrapper>

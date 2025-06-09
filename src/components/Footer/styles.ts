@@ -1,5 +1,6 @@
-import styled from 'styled-components';
-import { BREAKPOINTS } from '../../utils/constants';
+import styled from "styled-components";
+
+import { BREAKPOINTS } from "../../utils/constants";
 
 export const FooterWrapper = styled.footer`
   background-color: #F15A22;

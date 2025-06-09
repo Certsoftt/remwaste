@@ -1,14 +1,14 @@
-export interface FooterProps {
+export type FooterProps = {
   logo: string;
   description: string;
   email: string;
   phone: string;
-}
+};
 
-export interface NavLinkProps {
+export type NavLinkProps = {
   label: string;
   links: Array<{
     text: string;
     url: string;
   }>;
-}
+};
