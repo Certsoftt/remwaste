@@ -10,9 +10,9 @@ import { COLORS } from "./utils/constants";
 // Lazy load components for better initial load performance
 const Navbar = lazy(() => import("./components/Navbar"));
 const Footer = lazy(() => import("./components/Footer"));
-const Home = React.lazy(() => import("./pages/Home"));
-const About = React.lazy(() => import("./pages/About"));
-const NotFound = React.lazy(() => import("./pages/NotFound"));
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Styled components for the layout
 const AppContainer = styled.div`
