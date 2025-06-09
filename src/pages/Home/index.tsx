@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import MetaData from "../../common/metadata";
 import Everything from "../../components/Everything";
 import Hero from "../../components/Hero";
+import Introducing from "../../components/Introducing";
 import * as S from "./styles";
 
 const HomePageComponent: React.FC = () => {
@@ -17,6 +18,7 @@ const HomePageComponent: React.FC = () => {
       <S.HomeContainer>
         <Hero />
         <Everything />
+        <Introducing />
       </S.HomeContainer>
     </>
   );
