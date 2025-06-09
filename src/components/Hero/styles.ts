@@ -124,69 +124,104 @@ export const UsersText = styled.p`
 `;
 
 export const RightSection = styled.div`
-  flex: 1;
   position: relative;
+  width: 100%;
   display: flex;
   justify-content: center;
-  animation: ${fadeIn} 0.6s ease-out 0.3s backwards;
+  align-items: center;
+  overflow: hidden;
 
   @media (min-width: ${BREAKPOINTS.tablet}px) {
-    max-width: 50%;
+    width: 50%;
   }
 `;
 
 export const PhoneImage = styled.div`
   position: relative;
-  z-index: 1;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  z-index: 2;
 
   img {
     width: 100%;
     height: auto;
+    object-fit: contain;
+    max-width: 100%;
+  }
+
+  @media (min-width: ${BREAKPOINTS.tablet}px) {
+    max-width: 350px;
+  }
+
+  @media (min-width: ${BREAKPOINTS.desktop}px) {
     max-width: 400px;
   }
 `;
 
 export const FloatingElements = styled.div`
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   pointer-events: none;
+  z-index: 1;
 `;
 
 export const FloatingIcon = styled.img<{ $position: number }>`
   position: absolute;
-  width: clamp(40px, 8vw, 60px);
-  height: auto;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
   
-  ${(props) => {
-    switch (props.$position) {
+  @media (min-width: ${BREAKPOINTS.tablet}px) {
+    width: 50px;
+    height: 50px;
+  }
+
+  @media (min-width: ${BREAKPOINTS.desktop}px) {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Adjust floating icon positions based on $position prop */
+  ${({ $position }) => {
+    switch ($position) {
       case 1306:
         return css`
-          top: 10%;
-          left: -10%;
+          top: 15%;
+          left: 10%;
           animation: ${float} 3s ease-in-out infinite;
         `;
       case 1307:
         return css`
-          top: 20%;
-          right: -5%;
+          top: 25%;
+          right: 10%;
           animation: ${float} 3s ease-in-out infinite 0.5s;
         `;
       case 1308:
         return css`
-          bottom: 30%;
-          left: -15%;
+          top: 45%;
+          left: 5%;
           animation: ${float} 3s ease-in-out infinite 1s;
         `;
       case 1310:
         return css`
-          bottom: 20%;
-          right: -10%;
+          bottom: 35%;
+          right: 8%;
           animation: ${float} 3s ease-in-out infinite 1.5s;
         `;
       case 1317:
         return css`
-          top: 40%;
-          right: -15%;
+          bottom: 25%;
+          left: 12%;
+          animation: ${float} 3s ease-in-out infinite 2s;
+        `;
+      case 1320:
+        return css`
+          bottom: 15%;
+          right: 15%;
           animation: ${float} 3s ease-in-out infinite 2s;
         `;
       default:

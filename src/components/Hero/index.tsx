@@ -88,9 +88,9 @@ const HeroComponent: React.FC = () => {
             <img
               src="/assets/images/home/hero/image1.png"
               alt="Billia App Interface"
-              width={isMobile ? 300 : 400}
-              height={isMobile ? 612 : 816}
               loading="eager"
+              width={isMobile ? "300px" : "400px"}
+              height={isMobile ? "593px" : "790px"}
             />
           </S.PhoneImage>
           <S.FloatingElements>
