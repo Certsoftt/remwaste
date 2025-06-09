@@ -13,6 +13,7 @@ This documentation provides an overview of the project's architecture, implement
     - Styled-components for creating reuseable styling
     - React-Router-Dom for cleint-side routing
     - React-Helmet-Async for SEO best practice and injecting metadata into pages
+    - React-Reveal for extra animation support
 - **Build Tool**: Vite
 - **Package Manager**: pnpm
 - **Type Checking**: TypeScript

@@ -25,6 +25,7 @@ export const HeroSection = styled.section`
   background-color: ${COLORS.background};
   overflow: hidden;
   position: relative;
+  margin-top: 60px;
 `;
 
 export const ContentContainer = styled.div`
