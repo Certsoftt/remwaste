@@ -20,7 +20,7 @@ const HeroComponent: React.FC = () => {
     ["/assets/images/home/hero/img1.png", 1306],
     ["/assets/images/home/hero/img2.png", 1307],
     ["/assets/images/home/hero/img3.png", 1308],
-    ["/assets/images/home/hero/img4.png", 1310
+    ["/assets/images/home/hero/img4.png", 1310],
     ["/assets/images/home/hero/img5.png", 1317],
     ["/assets/images/home/hero/img6.png", 1320],
   ];
@@ -94,14 +94,17 @@ const HeroComponent: React.FC = () => {
             />
           </S.PhoneImage>
           <S.FloatingElements>
-            {floatingIcons.map(([iconImage, num]) => (
-              <S.FloatingIcon
-                key={num}
-                src={iconImage}
-                alt="Feature Icon"
-                $position={num}
-              />
-            ))}
+            {floatingIcons.map((icon) => {
+              const [iconImage, num] = icon as [string, number];
+              return (
+                <S.FloatingIcon
+                  key={num}
+                  src={iconImage as string}
+                  alt="Feature Icon"
+                  $position={num as number}
+                />
+              );
+            })}
           </S.FloatingElements>
         </S.RightSection>
       </S.ContentContainer>
