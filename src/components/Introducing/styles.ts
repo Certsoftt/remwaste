@@ -1,5 +1,6 @@
-import styled from 'styled-components';
-import { BREAKPOINTS, COLORS } from '../../utils/constants';
+import styled from "styled-components";
+
+import { BREAKPOINTS, COLORS } from "../../utils/constants";
 
 export const IntroducingSection = styled.section`
   padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 3vw, 2rem);

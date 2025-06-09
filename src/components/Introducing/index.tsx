@@ -1,40 +1,41 @@
-import React, { memo } from 'react';
-import { MessageOutlined, ThunderboltOutlined, SyncOutlined } from '@ant-design/icons';
+import { MessageOutlined, SyncOutlined, ThunderboltOutlined } from "@ant-design/icons";
+import React, { memo } from "react";
+
 import {
-  IntroducingSection,
   Container,
   Content,
-  ImageContainer,
-  PhoneImage,
-  Title,
-  Subtitle,
-  FeatureList,
-  FeatureItem,
-  FeatureIcon,
   FeatureContent,
+  FeatureDescription,
+  FeatureIcon,
+  FeatureItem,
+  FeatureList,
   FeatureTitle,
-  FeatureDescription
-} from './styles';
+  ImageContainer,
+  IntroducingSection,
+  PhoneImage,
+  Subtitle,
+  Title,
+} from "./styles";
 
 const features = [
   {
-    id: 'command',
-    icon: <MessageOutlined />,
-    title: 'Pay Bills by Typing a Command',
-    description: 'Just say "Pay my WAEC fees" or "Buy airtime for 0803..." — no need to search or fill endless forms.'
+    id: "command",
+    icon: <MessageOutlined style={{ fontSize: "24px", color: "#4A2B2B" }} />,
+    title: "Pay Bills by Typing a Command",
+    description: "Just say \"Pay my WAEC fees\" or \"Buy airtime for 0803...\" — no need to search or fill endless forms.",
   },
   {
-    id: 'repeats',
-    icon: <SyncOutlined />,
-    title: 'One-Tap Repeats',
-    description: 'AI remembers your past payments so you can repeat them in seconds — no retyping required.'
+    id: "repeats",
+    icon: <SyncOutlined style={{ fontSize: "24px", color: "#4A2B2B" }} />,
+    title: "One-Tap Repeats",
+    description: "AI remembers your past payments so you can repeat them in seconds — no retyping required.",
   },
   {
-    id: 'assistance',
-    icon: <ThunderboltOutlined />,
-    title: 'In-App Chat Assistance',
-    description: 'AI remembers your past payments so you can repeat them in seconds — no retyping required.'
-  }
+    id: "assistance",
+    icon: <ThunderboltOutlined style={{ fontSize: "24px", color: "#4A2B2B" }} />,
+    title: "In-App Chat Assistance",
+    description: "AI remembers your past payments so you can repeat them in seconds — no retyping required.",
+  },
 ];
 
 const Introducing: React.FC = () => {
@@ -63,7 +64,7 @@ const Introducing: React.FC = () => {
           </FeatureList>
         </Content>
         <ImageContainer>
-          <PhoneImage 
+          <PhoneImage
             src="/assets/images/introducing/image7.png"
             alt="Billia AI Chat Interface"
             loading="lazy"
