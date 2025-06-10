@@ -14,12 +14,12 @@ export const routes: Routes = [
   },
   {
     id: "about",
-    path: `/about`,
+    path: "about",
     element: About,
   },
   {
     id: "404",
-    path: "/*",
+    path: "*",
     element: NotFound,
   },
 ];

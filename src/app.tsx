@@ -1,17 +1,14 @@
 import { Spin } from "antd";
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import styled from "styled-components";
 
-// import { routes } from "./router/config";
+import { routes } from "./router/config";
 import { COLORS } from "./utils/constants";
 
 // Lazy load components for better initial load performance
 const Navbar = lazy(() => import("./components/Navbar"));
 const Footer = lazy(() => import("./components/Footer"));
-const Home = lazy(() => import("./pages/Home"));
-const About = lazy(() => import("./pages/About"));
-const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Styled components for the layout
 const AppContainer = styled.div`
@@ -29,20 +26,6 @@ const LoadingContainer = styled.div`
 `;
 
 function App() {
-  const [endpoint, setEndpoint] = useState("");
-  const [loadPage, setLoadPage] = useState("");
-  const handleEndpoint = () => {
-    setEndpoint(window.location.pathname.split("/")[window.location.pathname.split("/").length - 1]);
-  };
-  useEffect(() => {
-    handleEndpoint();
-    if (endpoint === "") {
-      setLoadPage("home");
-    }
-    else {
-      setLoadPage(endpoint);
-    }
-  }, [endpoint]);
   return (
     <HelmetProvider>
       <AppContainer>
@@ -54,9 +37,13 @@ function App() {
           )}
         >
           <Navbar />
-          {loadPage === "home" && <Home />}
-          {loadPage === "about" && <About />}
-          {(loadPage !== "home" && loadPage !== "about") && <NotFound />}
+          <Routes>
+            {
+              routes.map(route => (
+                <Route key={route.id} path={route.path} element={<route.element />} />),
+              )
+            }
+          </Routes>
           <Footer
             logo="/assets/images/home/footer/footerlogo.png"
             description="Our all-in-one app for bills, airtime, data, and smart payments — powered by Billia AI."
