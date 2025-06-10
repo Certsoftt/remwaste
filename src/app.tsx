@@ -1,6 +1,7 @@
 import { Spin } from "antd";
 import { lazy, Suspense } from "react";
 import { HelmetProvider } from "react-helmet-async";
+import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 
 import { routes } from "./router/config";
